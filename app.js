@@ -3,10 +3,10 @@ const client = new Discord.Client();
 const Enmap = require("enmap");
 const myEnmap = new Enmap();
 const DB = require("better-sqlite-pool")
-client.karma = new Enmap({name: "karma"});
+client.karma = new Enmap({name: 'test' });
 client.on("ready", () => {
   console.log("Rate Bot Online");
-  globalreacts = 310;
+  globalreacts = 323;
   y = 0;
   if(myEnmap.isReady) { 
   console.log("Data Ready");
@@ -91,7 +91,7 @@ client.on('messageReactionRemove', (reaction, user, message) => {
         client.karma.inc(key, "karma")
     }
 });
-const prefix = "=";
+const prefix = "^"
 client.on("message", (message) => {
 function react() {
   message.react("🔽")
@@ -102,7 +102,7 @@ if (message.attachments.size > 0) {
     setTimeout(react, 500);
     message.react("🔼");
   }else
-    if (message.content.startsWith(":")) {
+    if (message.content.startsWith("'")) {
       setTimeout(react,500);
       message.react("🔼");
     }else
@@ -115,7 +115,7 @@ if (message.attachments.size > 0) {
       message.channel.send("This bot was created by jam#3515");
     }else
     if (message.content.startsWith(prefix + "github")) {
-      message.channel.send("<https://github.com/jamxu88/>");
+      message.channel.send("<https://github.com/jamxu88/Reddicord>");
     }else
     if (message.content.startsWith(prefix + "karma")) {
     const key = `${message.author.id}`;
@@ -138,6 +138,13 @@ if (message.attachments.size > 0) {
         embed.addField(client.users.get(data.user).tag, `${data.karma} karma`);
       }
       return message.channel.send({embed});
+    }else
+    if (message.content.startsWith(prefix + "help")) {
+      message.channel.send({embed: {
+      color: ffffff,
+      description: "**Prefix**: `#` \n **General Commands**: \n `ping`- Ping the bot \n `creator`- Creator of this bot! \n `github`- View this bot's source code \n **Karma Commands**: \n `karma`- Check your karma \n `leaderboard`- Check the top 10 Karma Holders \n How to put Rating on a message: Start message with `'` (single quote)"
+}});
     }
   });
-client.login(process.env.BOT_TOKEN);
+//Just a Test Bot Token
+client.login("process.env.BOT_TOKEN");
