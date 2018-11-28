@@ -146,5 +146,4 @@ if (message.attachments.size > 0) {
 }});
     }
   });
-//Just a Test Bot Token
-client.login("process.env.BOT_TOKEN");
+client.login(process.env.BOT_TOKEN);
