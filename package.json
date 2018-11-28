@@ -1,0 +1,15 @@
+{
+  "name": "Reddicord",
+  "description": "Reddit on Discord",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "discord.js": "11.1.0",
+    "request": "2.81.0"
+    "enmap":  "4.4.2"
+    "better-sqlite-pool": "0.1.2"
+  }
+}
