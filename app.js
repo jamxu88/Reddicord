@@ -4,6 +4,7 @@ const Enmap = require("enmap");
 const myEnmap = new Enmap();
 const DB = require("better-sqlite-pool");
 client.karma = new Enmap({name: 'test' });
+
 client.on("ready", () => {
   console.log("Reddicord Activated");
   globalreacts = 323;
@@ -12,7 +13,7 @@ client.on("ready", () => {
   }else {
   console.log("Data Not Loaded");
   }
-  client.user.setActivity("Rate Bot- Official Launch December 01", { type: "STREAMING", url: "https://www.twitch.tv/jamxu" })
+  client.user.setActivity("Rate Bot- say &help", { type: "STREAMING", url: "https://www.twitch.tv/jamxu" });
 });
 client.on('messageReactionAdd', (reaction, user, message) => {
   if(reaction.emoji.name === "🔼") {
@@ -150,4 +151,4 @@ if (message.content.startsWith(prefix + "ping")) {
   }
 });
 //Test Token
-client.login(process.env.BOT_TOKEN);
+client.login("NTA2NjQyNTgwODUxNzg1NzI4.Dt284Q.kreDXU3Yg6nXtunk7wiA25stsPc");
