@@ -150,4 +150,4 @@ if (message.content.startsWith(prefix + "ping")) {
   }
 });
 //Test Token
-client.login(env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
