@@ -119,7 +119,7 @@ if (message.content.startsWith(prefix + "ping")) {
   if (message.content.startsWith(prefix + "karma")) {
   const key = `${message.author.id}`;
   try {
-    message.channel.send(`You currently have ${client.karma.get(key, "karma")} karma! *resets every day*`);
+    message.channel.send("You currently have ${client.karma.get(key, "karma")} karma! `Resets every day`");
   }
   catch(EnmapPathError) {
     message.channel.send("You currently have no karma!")
@@ -130,7 +130,7 @@ if (message.content.startsWith(prefix + "ping")) {
     const sorted = filtered.sort((b, a) => a.karma - b.karma);
     const top = sorted.splice(0,10);
     const embed = new Discord.RichEmbed()
-      .setTitle("Karma Leaderboard *resets every day*")
+      .setTitle("Karma Leaderboard `Resets every day`")
       .setAuthor(client.user.username, client.user.avatarURL)
       .setColor(16777215);
     for(const data of top) {
