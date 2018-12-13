@@ -13,7 +13,6 @@ client.on("ready", () => {
   }else {
   console.log("Data Not Loaded");
   }
-  client.user.setActivity("Rate Bot- say &help", { type: "STREAMING", url: "https://www.twitch.tv/jamxu" });
 });
 client.on('messageReactionAdd', (reaction, user, message) => {
   if(reaction.emoji.name === "🔼") {
@@ -120,7 +119,7 @@ if (message.content.startsWith(prefix + "ping")) {
   if (message.content.startsWith(prefix + "karma")) {
   const key = `${message.author.id}`;
   try {
-    message.channel.send(`You currently have ${client.karma.get(key, "karma")} karma!`);
+    message.channel.send(`You currently have ${client.karma.get(key, "karma")} karma! *resets every day*`);
   }
   catch(EnmapPathError) {
     message.channel.send("You currently have no karma!")
@@ -131,7 +130,7 @@ if (message.content.startsWith(prefix + "ping")) {
     const sorted = filtered.sort((b, a) => a.karma - b.karma);
     const top = sorted.splice(0,10);
     const embed = new Discord.RichEmbed()
-      .setTitle("Karma Leaderboard")
+      .setTitle("Karma Leaderboard *resets every day*")
       .setAuthor(client.user.username, client.user.avatarURL)
       .setColor(16777215);
     for(const data of top) {
@@ -151,4 +150,4 @@ if (message.content.startsWith(prefix + "ping")) {
   }
 });
 //Test Token
-client.login("NTA2NjQyNTgwODUxNzg1NzI4.Dt284Q.kreDXU3Yg6nXtunk7wiA25stsPc");
+client.login(env.BOT_TOKEN);
