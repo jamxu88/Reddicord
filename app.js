@@ -119,7 +119,7 @@ if (message.content.startsWith(prefix + "ping")) {
   if (message.content.startsWith(prefix + "karma")) {
   const key = `${message.author.id}`;
   try {
-    message.channel.send("You currently have ${client.karma.get(key, "karma")} karma! `Resets every day`");
+    message.channel.send(`You currently have ${client.karma.get(key, "karma")} karma. This will reset every day.`);
   }
   catch(EnmapPathError) {
     message.channel.send("You currently have no karma!")
