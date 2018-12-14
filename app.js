@@ -130,7 +130,7 @@ if (message.content.startsWith(prefix + "ping")) {
     const sorted = filtered.sort((b, a) => a.karma - b.karma);
     const top = sorted.splice(0,10);
     const embed = new Discord.RichEmbed()
-      .setTitle("Karma Leaderboard `Resets every day`")
+      .setTitle("Karma Leaderboard- Resets every day`")
       .setAuthor(client.user.username, client.user.avatarURL)
       .setColor(16777215);
     for(const data of top) {
@@ -141,7 +141,7 @@ if (message.content.startsWith(prefix + "ping")) {
   if (message.content.startsWith(prefix + "help")) {
     message.channel.send({embed: {
     color: 16777215,
-    description: "**Prefix**: `"+prefix+"` \n **General Commands**: \n `ping`- Ping the bot \n `creator`- Creator of this bot! \n `github`- View this bot's source code \n \n**Karma Commands**: \n `karma`- Check your karma \n `leaderboard`- Check the top 10 Karma Holders \n \n**How do I get Karma?**- Just post an image, gif, or video in a text channel with reactions enabled, and get some upvotes. Posting a link or joke? Just start your message with `'` (single quote)"
+    description: "**Prefix**: `"+prefix+"` \n **General Commands**: \n `ping`- Ping the bot \n `creator`- Creator of this bot! \n `github`- View this bot's source code \n \n**Karma Commands**: \n `karma`- Check your karma \n `leaderboard`- Check the top 10 Karma Holders \n \n**How do I get Karma?**- Just post an image, gif, or video in a text channel with reactions enabled, and get some upvotes. Posting a link or joke? Just start your message with `'` (single quote) \n Karma will reset once a day."
     }});
   }else
   if (message.content.includes('https://')) {
