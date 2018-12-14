@@ -130,7 +130,7 @@ if (message.content.startsWith(prefix + "ping")) {
     const sorted = filtered.sort((b, a) => a.karma - b.karma);
     const top = sorted.splice(0,10);
     const embed = new Discord.RichEmbed()
-      .setTitle("Karma Leaderboard- Resets every day`")
+      .setTitle("Karma Leaderboard- Resets every day")
       .setAuthor(client.user.username, client.user.avatarURL)
       .setColor(16777215);
     for(const data of top) {
