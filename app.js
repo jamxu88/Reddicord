@@ -8,6 +8,8 @@ client.karma = new Enmap({name: 'test' });
 client.on("ready", () => {
   console.log("Reddicord Activated");
   globalreacts = 0;
+  activeservers = 0;
+  serverlist = []
   if(myEnmap.isReady) { 
   console.log("Data Ready");
   }else {
@@ -92,6 +94,11 @@ client.on('messageReactionRemove', (reaction, user, message) => {
 });
 const prefix = "&"
 client.on("message", (message) => {
+if (!serverlist.includes(message.guild.id)) {
+  console.log(message.guild.id);
+  serverlist.push(message.guild.id);
+  activeservers += 1;
+}
 function react() {
   message.react("🔽");
   globalreacts = globalreacts + 1
@@ -107,7 +114,7 @@ if (message.attachments.size > 0) {
   }else
 if (message.content.startsWith(prefix + "ping")) {
   responsetime = new Date().getTime() - message.createdTimestamp
-  message.channel.send("Pong! There have been "+ globalreacts +" reactions made today. Response Time: " + responsetime + " ms");
+  message.channel.send("Pong! There have been `"+ globalreacts +"` reactions made today. Active Server Count: `" + activeservers + "` Response Time: `" + responsetime + "` ms");
   console.log("Pinged");
   }else
   if (message.content.startsWith(prefix + "creator")) {
