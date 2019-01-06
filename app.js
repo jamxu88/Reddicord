@@ -114,7 +114,7 @@ if (message.attachments.size > 0) {
   }else
 if (message.content.startsWith(prefix + "ping")) {
   responsetime = new Date().getTime() - message.createdTimestamp
-  message.channel.send("Pong! There have been `"+ globalreacts +"` reactions made today. Active Server Count: `" + activeservers + "` Response Time: `" + responsetime + "` ms");
+  message.channel.send("Pong! There have been `"+ globalreacts +"` reactions made today. Active Servers Today: `" + activeservers + "` Response Time: `" + responsetime + "` ms");
   console.log("Pinged");
   }else
   if (message.content.startsWith(prefix + "creator")) {
@@ -148,7 +148,7 @@ if (message.content.startsWith(prefix + "ping")) {
   if (message.content.startsWith(prefix + "help")) {
     message.channel.send({embed: {
     color: 16777215,
-    description: "**Prefix**: `"+prefix+"` \n **General Commands**: \n `ping`- Ping the bot \n `creator`- Creator of this bot! \n `github`- View this bot's source code \n \n**Karma Commands**: \n `karma`- Check your karma \n `leaderboard`- Check the top 10 Karma Holders \n \n**How do I get Karma?**- Just post an image, gif, link, or video in a text channel with reactions enabled, and get some upvotes. Posting a joke? Just start your message with `'` (single quote) \n Karma will reset once a day."
+    description: "**Prefix**: `"+prefix+"` \n **General Commands**: \n `ping`- Ping the bot \n `creator`- Creator of this bot! \n `github`- View this bot's source code \n \n**Karma Commands**: \n `karma`- Check your karma \n `leaderboard`- Check the top 10 Karma Holders \n \n**How do I get Karma?**- Just post an image, gif, link, or video in a text channel with reactions enabled, and get some upvotes. Posting a joke? Just start your message with `'` (single quote) \n Karma will reset once a day. \n **Support Server:** https://discord.gg/txhVHVN"
     }});
   }else
   if (message.content.includes('https://')) {
