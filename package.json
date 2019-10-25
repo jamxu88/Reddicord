@@ -3,6 +3,9 @@
   "description": "Reddit on Discord",
   "version": "1.0.0",
   "main": "app.js",
+  "engines": {
+    "node": "12.13.0"
+  }
   "scripts": {
     "start": "node app.js"
   },
